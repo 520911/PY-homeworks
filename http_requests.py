@@ -11,7 +11,7 @@ def super_hero_func(hero_url, list_of_dicts):
         response = requests.get(main_url)
         data = response.json()
         new_dict[names['name']] = int(
-            data['results'][0]['powerstats']['intelligence'])  # Получение словарей имя: значение интеллекта
+            data['results'][0]['powerstats']['intelligence'])  # Получение словаря имя: значение интеллекта
 
     for intel in sorted(new_dict.items(), key=lambda para: para[1], reverse=True):  # Сортировка по значениям словаря
         print(f'Самый умный супергерой: {intel[0]}, его интеллект равен: {intel[1]}')
