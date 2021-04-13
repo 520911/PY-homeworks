@@ -6,8 +6,8 @@ names_of_characters = [{'name': 'Hulk'}, {'name': 'Captain America'}, {'name': '
 
 def super_hero_func(hero_url, list_of_dicts):
     new_dict = {}
-    for names in names_of_characters:
-        main_url = url + names['name']
+    for names in list_of_dicts:
+        main_url = hero_url + names['name']
         response = requests.get(main_url)
         data = response.json()
         new_dict[names['name']] = int(
